@@ -36,7 +36,15 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: Depcheck report
-          path: ${{github.workspace}}/reports
+          path: ${{github.workspace}}/reports/vulnerableapprut
+      - name: Upload ftp
+        uses: genietim/ftp-action@releases/v4
+        with:
+          host: ${{ secrets.FTP_SERVER }}
+          user: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          localDir: "/reports/vulnerableapprut"
+          remoteDir: "/files/reports/vulnerableapprut"
 
   sonarqube:
     runs-on: ubuntu-latest
