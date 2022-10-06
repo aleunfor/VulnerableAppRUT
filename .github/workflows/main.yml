@@ -43,8 +43,8 @@ jobs:
           host: ${{ secrets.FTP_SERVER }}
           user: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          localDir: "/reports"
-          remoteDir: "/files/reports/vulnerableapprut"
+          localDir: "reports"
+          remoteDir: "files/reports/vulnerableapprut"
           options: "--delete --asci"
 
   sonarqube:
