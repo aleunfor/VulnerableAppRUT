@@ -28,7 +28,7 @@ jobs:
         with:
           project: "VulnerableAppRUT"
           path: "."
-          format: "HTML"
+          format: "ALL"
           args: >
             --failOnCVSS 7
             --enableRetired
