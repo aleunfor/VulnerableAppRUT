@@ -36,14 +36,14 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: Depcheck report
-          path: ${{github.workspace}}/reports/vulnerableapprut
+          path: ${{github.workspace}}/reports
       - name: Upload ftp
         uses: sebastianpopp/ftp-action@releases/v2
         with:
           host: ${{ secrets.FTP_SERVER }}
           user: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          localDir: "/reports/vulnerableapprut"
+          localDir: "/reports"
           remoteDir: "/files/reports/vulnerableapprut"
           options: "--delete --asci"
 
