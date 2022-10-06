@@ -38,13 +38,14 @@ jobs:
           name: Depcheck report
           path: ${{github.workspace}}/reports/vulnerableapprut
       - name: Upload ftp
-        uses: genietim/ftp-action@releases/v4
+        uses: sebastianpopp/ftp-action@releases/v2
         with:
           host: ${{ secrets.FTP_SERVER }}
           user: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           localDir: "/reports/vulnerableapprut"
           remoteDir: "/files/reports/vulnerableapprut"
+          options: "--delete --asci"
 
   sonarqube:
     runs-on: ubuntu-latest
