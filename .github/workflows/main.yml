@@ -12,6 +12,14 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  secretsscanner:
+    runs-on: ubuntu-latest
+    steps:
+      - name: trufflehog-actions-scan
+        uses: edplato/trufflehog-actions-scan@master
+        with:
+          scanArguments: "--json > secrets.json" # Add custom options here*
+
   depchecktest:
     runs-on: ubuntu-latest
     name: depecheck_test
