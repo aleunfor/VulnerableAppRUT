@@ -18,7 +18,7 @@ jobs:
       - name: trufflehog-actions-scan
         uses: edplato/trufflehog-actions-scan@master
         with:
-          scanArguments: "--json > secrets.json" # Add custom options here*
+          scanArguments: "--json" # Add custom options here*
 
   depchecktest:
     runs-on: ubuntu-latest
