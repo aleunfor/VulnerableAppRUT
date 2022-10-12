@@ -76,6 +76,7 @@ jobs:
         with:
           args: >
             -Dsonar.projectKey=VulnerableAppRUT
+            -Dsonar.branch.name=master
             -Dsonar.dependencyCheck.htmlReportPath=./reports/dependency-check-report.html
             -Dsonar.dependencyCheck.jsonReportPath=./reports/dependency-check-report.json
         env:
